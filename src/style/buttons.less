@@ -1,0 +1,19 @@
+.btn {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    background: none;
+    border: none;
+    &.header-call-request__btn {
+        margin-left: 3rem;
+        padding: 0.5rem 2rem;
+        .fsize(13);
+        color: @headerReqBtn;
+        border: 2px solid @headerReqBtn;
+        &:hover {
+            color: @headerReqBtnHover;
+            border-color: @headerReqBtnHover;
+        }
+    }
+}

@@ -2,3 +2,6 @@ FILES/
 FILES/*
 /FILES/*
 build/*
+bower_components/*
+node_modules/*
+.idea/*
