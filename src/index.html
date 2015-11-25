@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Title</title>
+    <title>Slowemition</title>
     <link rel="stylesheet" href="css/style.css">
     <!--<link rel="stylesheet" href="css/style.min.css">-->
 </head>
@@ -25,7 +25,7 @@
                 </nav>
                 <div class="header-call-request">
                     <a href="tel:+74995633249" class="header-call-request__phone">+7 (499) <strong>563-32-49</strong></a>
-                    <button class="btn header-call-request__btn">заказать звонок</button>
+                    <button class="btn header-call-request__btn jsPopupCallback">заказать звонок</button>
                 </div>
             </div>
         </header>
@@ -36,7 +36,7 @@
                 МЫ ПРОДЛИМ САМЫЕ ЭМОЦИОНАЛЬНЫЕ МОМЕНТЫ <br>
                 ВАШЕЙ ЖИЗНИ!
             </h2>
-            <button class="btn btn-get-price">ПОЛУЧИТЬ ПРАЙС-ЛИСТ</button>
+            <button class="btn btn-get-price jsPopupPrice">ПОЛУЧИТЬ ПРАЙС-ЛИСТ</button>
         </div>
     </div>
     <!-- end first screen -->
@@ -138,7 +138,7 @@
                     <iframe width="502" height="338" src="https://www.youtube.com/embed/Aj8xUuGB2Q8" frameborder="0" allowfullscreen></iframe>
                     <div class="direction-sect__price-block">
                         <div class="price">от <strong>30000</strong> грн</div>
-                        <button class="btn btn-direction-sect">получитЬ подробный прайс</button>
+                        <button class="btn btn-direction-sect jsPopupPrice">получитЬ подробный прайс</button>
                     </div>
                 </div>
                 <div class="direction-sect__description">
@@ -172,7 +172,7 @@
                     <iframe width="502" height="338" src="https://www.youtube.com/embed/Aj8xUuGB2Q8" frameborder="0" allowfullscreen></iframe>
                     <div class="direction-sect__price-block">
                         <div class="price">от <strong>30000</strong> грн</div>
-                        <button class="btn btn-direction-sect">получитЬ подробный прайс</button>
+                        <button class="btn btn-direction-sect jsPopupPrice">получитЬ подробный прайс</button>
                     </div>
                 </div>
                 <div class="direction-sect__description">
@@ -197,7 +197,7 @@
                     <iframe width="502" height="338" src="https://www.youtube.com/embed/Aj8xUuGB2Q8" frameborder="0" allowfullscreen></iframe>
                     <div class="direction-sect__price-block">
                         <div class="price">от <strong>30000</strong> грн</div>
-                        <button class="btn btn-direction-sect">получитЬ подробный прайс</button>
+                        <button class="btn btn-direction-sect jsPopupPrice">получитЬ подробный прайс</button>
                     </div>
                 </div>
                 <div class="direction-sect__description">
@@ -228,7 +228,7 @@
                     <iframe width="502" height="338" src="https://www.youtube.com/embed/Aj8xUuGB2Q8" frameborder="0" allowfullscreen></iframe>
                     <div class="direction-sect__price-block">
                         <div class="price">от <strong>30000</strong> грн</div>
-                        <button class="btn btn-direction-sect">получитЬ подробный прайс</button>
+                        <button class="btn btn-direction-sect jsPopupPrice">получитЬ подробный прайс</button>
                     </div>
                 </div>
                 <div class="direction-sect__description">
@@ -266,7 +266,7 @@
                     <iframe width="502" height="338" src="https://www.youtube.com/embed/Aj8xUuGB2Q8" frameborder="0" allowfullscreen></iframe>
                     <div class="direction-sect__price-block">
                         <div class="price">от <strong>30000</strong> грн</div>
-                        <button class="btn btn-direction-sect">получитЬ подробный прайс</button>
+                        <button class="btn btn-direction-sect jsPopupPrice">получитЬ подробный прайс</button>
                     </div>
                 </div>
                 <div class="direction-sect__description">
@@ -300,12 +300,12 @@
     <!-- begin contacts section -->
     <div class="section contacts-sect">
         <div class="container">
-            <h3 class="contacts-sect__title">ХОТИТЕ В ДЕТАЛЯХ ЗАПЕЧАТЛЕТЬ ЭМОЦИИ БЛИЗКИХ?</h3>
-            <button class="btn btn-get-price-contacts">ПОЛУЧИТЕ ПРАЙС-ЛИСТ</button>
+            <h3 class="contacts-sect__title">ХОТИТЕ <strong>В ДЕТАЛЯХ</strong> ЗАПЕЧАТЛЕТЬ ЭМОЦИИ БЛИЗКИХ?</h3>
+            <button class="btn btn-get-price-contacts jsPopupPrice">ПОЛУЧИТЕ ПРАЙС-ЛИСТ</button>
             <p>или свяжитесь с нами для уточнения деталей</p>
-            <a href="tel:+74995633249">+7 (499) <strong>563-32-49</strong></a>
-            <span class="vert-line"></span>
-            <a href="mailto:info@slowemotion.com.ua"><strong>info </strong>@slowemotion.com.ua</a>
+            <a href="tel:+74995633249" class="contacts-phone">+7 (499) <strong>563-32-49</strong></a>
+            <span class="contacts-vert-line"></span>
+            <a href="mailto:info@slowemotion.com.ua" class="contacts-email"><strong>info</strong>@slowemotion.com.ua</a>
         </div>
     </div>
     <!-- end contacts section -->
@@ -314,9 +314,27 @@
     <div class="section how-we-work-sect">
         <div class="container">
             <div class="section-title">
-                КАК МЫ РАБОТАЕМ
+                <strong>КАК</strong> МЫ РАБОТАЕМ
             </div>
             <div class="how-work_slider">
+                <div class="rotateslider-container" id="slider">
+                    <!-- Insert your images here -->
+                    <div class="rotateslider-item">
+                        <img src="images/slide-1.png">
+                    </div>
+                    <div class="rotateslider-item">
+                        <img src="images/slide-3.png">
+                    </div>
+                    <div class="rotateslider-item">
+                        <img src="images/slide-2.png">
+                    </div>
+
+
+                    <!-- Next/prev arrows navigation -->
+                    <span class="arrow right js-rotateslider-arrow" data-action="next"></span>
+                    <span class="arrow left js-rotateslider-arrow" data-action="prev"></span>
+
+                </div>
 
             </div>
             <div class="how-work__social">
@@ -347,7 +365,7 @@
              <div class="we-figures-item">
                  <p class="title">
                      <span>100</span>
-                     % гарантия
+                     % гарантия <br>
                      позитивных эмоций
                  </p>
                  <p class="descrip">
@@ -357,7 +375,7 @@
              <div class="we-figures-item">
                  <p class="title">
                      <span>4K</span>
-                     разрешение
+                     разрешение <br>
                      видео
                  </p>
                  <p class="descrip">
@@ -383,7 +401,7 @@
         <div class="container">
             <h3 class="section-title">ЧТО О НАС <strong>ГОВОРЯТ</strong></h3>
             <p class="subtitle">
-                Эмоции - единственное, на что можно тратить деньги без сожаления.
+                <strong>Эмоции</strong> - единственное, на что можно тратить деньги без сожаления.
                 <br>
                 Наши клиенты с этим полностью согласны!
             </p>
@@ -392,9 +410,9 @@
             </div>
             <div class="reviews-wrapper">
                 <img src="images/reviews-bg.png" alt="" class="reviews-bg">
-                <div class="review-block">
+                <div class="review-block review-1">
                     <div class="review-img">
-                        <img src="images/review-1.jpg" alt="" class="">
+                        <img src="images/review-1.png" alt="" class="">
                     </div>
                     <p class="review-name">Алексей Григорьев</p>
                     <div class="review-text">
@@ -402,9 +420,9 @@
                         Спасибо огромное!
                     </div>
                 </div>
-                <div class="review-block">
+                <div class="review-block review-2">
                     <div class="review-img">
-                        <img src="images/review-2.jpg" alt="" class="">
+                        <img src="images/review-2.png" alt="" class="">
                     </div>
                     <p class="review-name">Наталья белова</p>
                     <div class="review-text">
@@ -414,9 +432,9 @@
                         насмотримся) Спасибо!
                     </div>
                 </div>
-                <div class="review-block">
+                <div class="review-block review-3">
                     <div class="review-img">
-                        <img src="images/review-3.jpg" alt="" class="">
+                        <img src="images/review-3.png" alt="" class="">
                     </div>
                     <p class="review-name">михаил глушко</p>
                     <div class="review-text">
@@ -438,7 +456,7 @@
         <div class="container">
             <h3>ХОТИТЕ ПОЛУЧИТЬ <strong>невероятные эмоции</strong> от съемки</h3>
             <p>и, как результат, стильный мегапозитивный видеоролик?</p>
-            <button class="btn btn-get-price-contacts">ПОЛУЧИТЬ ПРАЙС-ЛИСТ</button>
+            <button class="btn btn-get-price-contacts jsPopupPrice">ПОЛУЧИТЬ ПРАЙС-ЛИСТ</button>
         </div>
     </div>
     <!-- end prefooter -->
@@ -447,17 +465,42 @@
         <div class="container">
             <p class="copyright">© SlowEmotion 2015. Все права защищены.</p>
             <div class="footer-contacts">
-                <a href="mailto:info@slowemotion.com.ua"><strong>info@</strong>slowemotion.com.ua</a>
+                <a href="mailto:info@slowemotion.com.ua" class="footer-email"><strong>info@</strong>slowemotion.com.ua</a>
                 |
-                <a href="tel:+74995633249">+7 (499) <strong>563-32-49</strong></a>
-                <button class="btn btn-footer">Заказать звонок</button>
+                <a href="tel:+74995633249" class="footer-phone">+7 (499) <strong>563-32-49</strong></a>
+                <button class="btn btn-footer jsPopupCallback">Заказать звонок</button>
             </div>
         </div>
     </footer>
 </div>
 
+<!-- begin popup -->
+<div class="popup-bg"></div>
+<div class="popup popup-callback">
+    <div class="popup-main">
+        <div class="popup-close"><span></span><span></span></div>
+        <form action="#">
+            <input type="text" placeholder="Ваше имя" class="popup-input popup-input--name">
+            <input type="text" placeholder="Ваш телефон" class="popup-input popup-input--phone">
+            <button class="btn btn-popup">Позвоните мне</button>
+        </form>
+    </div>
+</div>
+<div class="popup popup-price">
+    <div class="popup-main">
+        <div class="popup-close"><span></span><span></span></div>
+        <form action="#">
+            <input type="text" placeholder="Ваше имя" class="popup-input popup-input--name">
+            <input type="text" placeholder="Ваш телефон" class="popup-input popup-input--phone">
+            <button class="btn btn-popup">Получить прайс-лист</button>
+        </form>
+    </div>
+</div>
+<!-- end popup -->
 
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.rotateSlider.js"></script>
 <script src="js/main.js"></script>
 <!--<script src="js/main.min.js"></script>-->
 </body>

@@ -48,4 +48,31 @@
             background: @btnGetPriceHover;
         }
     }
+    &.btn-footer {
+        display: inline-block;
+        margin-top: -0.1rem;
+        vertical-align: top;
+        padding: 0.5rem 1rem;
+        border: 1px solid @white;
+        .fsize(13);
+        font-weight: 400;
+        &:hover {
+            color: @footer-btn-hover;
+            border-color: @footer-btn-hover;
+        }
+    }
+    &.btn-popup {
+        display: block;
+        width: 100%;
+        color: @white;
+        padding: 1rem 3.5rem;
+        font-weight: 800;
+        .fsize(20);
+        text-transform: uppercase;
+        background: @btnGetPrice;
+        border: 1px solid @btnGetPriceBorder;
+        &:hover {
+            background: @btnGetPriceHover;
+        }
+    }
 }
