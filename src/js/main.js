@@ -15,6 +15,10 @@ app.main = {
         });
         $('.popup-close, .popup-bg').on('click', function () {
             app.popup.close();
+        });
+        $('.menu-toggle').on('click', function() {
+            $(this).toggleClass('active');
+            $('.main-menu').toggleClass('active');
         })
     },
     slider: function() {

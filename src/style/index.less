@@ -1,3 +1,10 @@
+.setBg(@url, @bgSize: 100%, @bgRepeat: no-repeat) {
+    width: unit(image-width(@url)) * 0.1rem;
+    height: unit(image-height(@url)) * 0.1rem;
+    background-image: url(@url);
+    background-size: @bgSize;
+    background-repeat: no-repeat;
+}
 .fsize(@sizeValue) {
     @remValue: @sizeValue/10;
     font-size: ~"@{remValue}rem";
@@ -219,7 +226,7 @@ body {
 }
 
 .main-wrapper {
-	height: 10rem;
+    overflow: hidden;
 }
 .container {
 	max-width: 1216px;
@@ -235,7 +242,9 @@ body {
 }
 
 .section-partyemotion {
-
+    .container {
+        position: relative;
+    }
 }
 .first-section {
     background-image: url(../images/main-bg.jpg);
@@ -410,6 +419,7 @@ strong {
     .clearfix;
 
     &.section-partyemotion {
+        position: relative;
         background-image: url(../images/section-partyemotion.jpg);
         .btn-direction-sect {
             color: @partyBtn;
@@ -426,8 +436,13 @@ strong {
                 text-shadow: 1px 1px 2px @partyPriceShadow;
             }
         }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
     }
     &.section-babyemotion {
+        position: relative;
         background-image: url(../images/section-babyemotion.jpg);
         .btn-direction-sect {
             color: @babyBtn;
@@ -444,8 +459,13 @@ strong {
                 text-shadow: 1px 1px 2px @babyPriceShadow;
             }
         }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
     }
     &.section-loveemotion {
+        position: relative;
         background-image: url(../images/section-loveemotion.jpg);
         .btn-direction-sect {
             color: @loveBtn;
@@ -462,8 +482,13 @@ strong {
                 text-shadow: 1px 1px 2px @lovePriceShadow;
             }
         }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
     }
     &.section-foodyemotion {
+        position: relative;
         background-image: url(../images/section-foodemotion.jpg);
         .btn-direction-sect {
             color: @foodBtn;
@@ -480,8 +505,13 @@ strong {
                 text-shadow: 1px 1px 2px @lovePriceShadow;
             }
         }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
     }
     &.section-sportemotion {
+        position: relative;
         background-image: url(../images/section-sportemotion.jpg);
         .btn-direction-sect {
             color: @sportBtn;
@@ -497,6 +527,10 @@ strong {
                 color: @sportPrice;
                 text-shadow: 1px 1px 2px @sportPriceShadow;
             }
+        }
+        .container {
+            position: relative;
+            z-index: 1;
         }
     }
 }
@@ -754,7 +788,8 @@ strong {
             margin: 1rem 0 0.75rem;
             height: 14px;
             background-image: url(../images/wide-arrow.png);
-            background-size: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
 
         }
     }
@@ -967,7 +1002,278 @@ footer {
 
 
 
+.partyemotion-decor-1 {
+    position: absolute;
+    z-index: 0;
+    top: -8%;
+    left: 13.5%;
+    .setBg('../images/section-partyemotion__balloons.jpg');
+}
+.partyemotion-decor-2 {
+    position: absolute;
+    z-index: 1;
+    left: 66%;
+    top: -4%;
+    .setBg('../images/section-partyemotion__decor.jpg');
+}
+.partyemotion-decor-3 {
+    position: absolute;
+    z-index: 1;
+    top: 11%;
+    left: 27%;
+    .setBg('../images/section-partyemotion__decor2.jpg');
+}
 
+.babyemotion-decor {
+    position: absolute;
+    z-index: 1;
+    top: -6%;
+    left: 64%;
+    .setBg('../images/section-babyemotion__baby.jpg');
+}
+.babyemotion-decor-2 {
+    position: absolute;
+    z-index: 1;
+    top: -13%;
+    left: 18%;
+    .setBg('../images/section-babyemotion__ball.jpg');
+}
+.lovemotion-decor {
+    position: absolute;
+    z-index: 1;
+    top: -5%;
+    left: 62%;
+    .setBg('../images/section-loveemotion__flowers.jpg');
+}
+.lovemotion-decor-2 {
+    position: absolute;
+    z-index: 1;
+    top: -18%;
+    left: 12%;
+    .setBg('../images/section-loveemotion__heart.jpg');
+}
+.lovemotion-decor-3 {
+    position: absolute;
+    z-index: 1;
+    top: 28%;
+    right: 11%;
+    .setBg('../images/section-loveemotion__hearts.jpg');
+}
+
+.foodemotion-decor {
+    position: absolute;
+    z-index: 1;
+    top: -6%;
+    right: 22%;
+    .setBg('../images/section-foodemotion__cupcake.jpg');
+}
+.foodemotion-decor-2 {
+    position: absolute;
+    z-index: 1;
+    top: 77%;
+    left: 15%;
+    .setBg('../images/section-foodemotion__decor-1.jpg');
+}
+.foodemotion-decor-3 {
+    position: absolute;
+    z-index: 1;
+    top: 64%;
+    left: 50%;
+    .setBg('../images/section-foodemotion__decor-2.jpg');
+}
+.foodemotion-decor-4 {
+    position: absolute;
+    z-index: 1;
+    top: 21%;
+    left: 50%;
+    .setBg('../images/section-foodemotion__decor-3.jpg');
+}
+.foodemotion-decor-5 {
+    position: absolute;
+    z-index: 1;
+    top: 1%;
+    left: 7%;
+    .setBg('../images/section-foodemotion__food.jpg');
+}
+
+.sportemotion-decor {
+    position: absolute;
+    z-index: 1;
+    top: -10%;
+    left: 3%;
+    .setBg('../images/section-sportemotion__ball.jpg');
+}
+.sportemotion-decor-2 {
+    position: absolute;
+    z-index: 1;
+    top: 22%;
+    left: 22%;
+    .setBg('../images/section-sportemotion__decor-1.jpg');
+}
+.sportemotion-decor-3 {
+    position: absolute;
+    z-index: 1;
+    top: 52%;
+    right: 16.5%;
+    .setBg('../images/section-sportemotion__decor-2.jpg');
+}
+.sportemotion-decor-4 {
+    position: absolute;
+    z-index: 1;
+    top: 22%;
+    right: 20%;
+    .setBg('../images/section-sportemotion__decor-3.jpg');
+}
+.sportemotion-decor-5 {
+    position: absolute;
+    z-index: 1;
+    top: 86%;
+    right: 23%;
+    .setBg('../images/section-sportemotion__decor-4.jpg');
+}
+
+
+@media (max-width: 1600px) {
+    .partyemotion-decor-1 {
+        left: auto;
+        right: 84%;
+    }
+    .partyemotion-decor-3 {
+        left: auto;
+        right: 79%;
+    }
+    .babyemotion-decor {
+        left: 73%;
+    }
+    .babyemotion-decor-2 {
+        left: auto;
+        right: 69%;
+    }
+    .lovemotion-decor-2 {
+        left: auto;
+        right: 70%;
+    }
+    .lovemotion-decor {
+        left: 72%;
+    }
+    .foodemotion-decor {
+        right: auto;
+        left: 80%;
+    }
+    .foodemotion-decor-5 {
+        left: auto;
+        right: 73%;
+    }
+    .sportemotion-decor {
+        left: auto;
+        right: 74%;
+    }
+}
+
+@media (max-width: 1180px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: 11;
+        span {
+            display: block;
+            background: @white;
+            height: 0.4rem;
+            width: 3.5rem;
+            margin-top: 0.6rem;
+            transition: all 0.5s ease;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &.active {
+            position: fixed;
+            span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    margin-bottom: -1rem;
+                    margin-top: 1rem;
+                }
+                &:nth-child(2) {
+                    transform: rotate(-45deg);
+                }
+                &:nth-child(3) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .main-menu {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background: fade(@black, 75%);
+        text-align: center;
+        transition: left 0.5s ease;
+        &.active {
+            left: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        li {
+            display: block;
+            a {
+                display: block;
+                font-weight: 700;
+                .fsize(26);
+                color: @white;
+                line-height: 2;
+                margin: 2rem 0;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .header-call-request {
+        margin-right: 2rem;
+    }
+    .partyemotion-decor-1,
+    .partyemotion-decor-2,
+    .partyemotion-decor-3,
+    .babyemotion-decor,
+    .babyemotion-decor-2,
+    .lovemotion-decor,
+    .lovemotion-decor-2,
+    .lovemotion-decor-3,
+    .lovemotion-decor-4,
+    .foodemotion-decor,
+    .foodemotion-decor-2,
+    .foodemotion-decor-3,
+    .foodemotion-decor-4,
+    .foodemotion-decor-5,
+    .sportemotion-decor,
+    .sportemotion-decor-2,
+    .sportemotion-decor-3,
+    .sportemotion-decor-4,
+    .sportemotion-decor-5 {
+        display: none;
+    }
+    .main-logo {
+        margin-bottom: 0;
+        text-align: center;
+        clear: both;
+    }
+    footer {
+        padding: 0 1%;
+    }
+}
 
 @media (max-width: 1024px) {
     .large-visible {
@@ -976,13 +1282,41 @@ footer {
     .medium-visible {
         display: block;
     }
+    .benefit {
+        width: 50%;
+    }
+    .direction-sect__video {
+        display: block;
+        width: 100%;
+        float: none !important;
+        margin: 0 0 2rem;
+    }
+    .direction-sect__description {
+        display: block;
+        width: 100%;
+        float: none !important;
+    }
+    .direction-sect {
+        .container {
+            background: none;
+        }
+    }
+    .rotateslider-container {
+        width: 90%;
+    }
 }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .medium-visible {
         display: none;
     }
     .small-visible {
         display: block;
+    }
+    .we-figures-item {
+        width: 50%;
+        br {
+            display: none;
+        }
     }
 }
 @media (max-width: 480px) {
