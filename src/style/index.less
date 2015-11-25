@@ -19,7 +19,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 menu,
 nav,
@@ -185,7 +184,9 @@ th {
 
 
 
-
+* {
+    box-sizing: border-box;
+}
 html {
     background: @white;
     font-size: 10px;
@@ -193,6 +194,30 @@ html {
 body {
 	font-family: 'Roboto';
 }
+.clearfix {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+.clear {
+    display: block;
+    clear: both;
+}
+.large-visible {
+    display: block;
+}
+.medium-visible {
+    display: none;
+}
+.small-visible {
+    display: none;
+}
+.smallest-visible {
+    display: none;
+}
+
 .main-wrapper {
 	height: 10rem;
 }
@@ -201,8 +226,14 @@ body {
 	margin: auto;
 }
 .section {
-	
+	&.why-me {
+        padding: 4.5rem 0 1.5rem;
+    }
 }
+.directions-sections {
+
+}
+
 .section-partyemotion {
 
 }
@@ -238,7 +269,6 @@ header {
     }
 }
 
-
 .header-call-request {
     display: inline-block;
     float: right;
@@ -251,7 +281,7 @@ header {
     color: @headerReqPhone;
     margin-top: 0.2rem;
     .fsize(18);
-    font-weight: 200;
+    font-weight: 300;
     strong {
         font-weight: 700;
     }
@@ -260,10 +290,298 @@ header {
     display: inline-block;
     vertical-align: top;
 }
-
 .first-screen-content {
-
+    padding: 4rem 0 16rem;
+    text-align: center;
+    color: @white;
 }
 .main-logo {
+    margin-bottom: -7rem;
     text-align: center;
+}
+h1 {
+    margin: 0;
+    font-weight: 300;
+    .fsize(40);
+    text-transform: uppercase;
+}
+h2 {
+    margin: 0.5rem 0 4rem;
+    .fsize(24);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+strong {
+    font-weight: 700;
+}
+
+.why-me__title {
+    margin: 0 0 5rem;
+    .fsize(40);
+    font-weight: 300;
+    text-align: center;
+}
+.why-me__items {
+
+}
+.benefits-wrap {
+
+}
+.benefit {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    margin: 0 0 5.5rem;
+    padding: 9.5rem 3.1% 0;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    &.benefit-1 {
+        background-image: url(../images/benefit-1.png);
+    }
+    &.benefit-2 {
+        background-image: url(../images/benefit-2.png);
+    }
+    &.benefit-3 {
+        background-position: center 0.3rem;
+        background-image: url(../images/benefit-3.png);
+    }
+    &.benefit-4 {
+        background-position: center 0.3rem;
+        background-image: url(../images/benefit-4.png);
+    }
+    &.benefit-5 {
+        background-image: url(../images/benefit-5.png);
+    }
+    &.benefit-6 {
+        background-image: url(../images/benefit-6.png);
+    }
+    &.benefit-7 {
+        background-position: center 0.5rem;
+        background-image: url(../images/benefit-7.png);
+    }
+    &.benefit-8 {
+        background-image: url(../images/benefit-8.png);
+    }
+}
+.benefit__title {
+    margin: 0 0 0.75rem;
+    font-weight: 700;
+    .fsize(17);
+    text-transform: uppercase;
+    color: @benefitTitle;
+}
+.benefit__text {
+    margin: 0;
+    font-weight: 300;
+    .fsize(13);
+    color: @benefitText;
+}
+
+.directions-sections {
+
+}
+.direction-sect {
+    padding: 16rem 0 3.9rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    .container {
+        padding: 4.6rem 4.8rem 3.5rem;
+        background: fade(@white, 10%);
+        .clearfix;
+    }
+    &:nth-child(2n) {
+        .direction-sect__video {
+            float: right;
+        }
+        .direction-sect__description {
+            float: left;
+        }
+    }
+    &:nth-child(2n + 1) {
+        .direction-sect__video {
+            float: left;
+        }
+        .direction-sect__description {
+            float: right;
+        }
+    }
+    .clearfix;
+
+    &.section-partyemotion {
+        background-image: url(../images/section-partyemotion.jpg);
+        .btn-direction-sect {
+            color: @partyBtn;
+            border-color: @partyBtn;
+            text-shadow: 1px 1px 2px @partyBtnTextShadow;
+            &:hover {
+                color: @partyBtnHover;
+                border-color: @partyBtnHover;
+            }
+        }
+        .direction-sect__price-block {
+            .price {
+                color: @partyPrice;
+                text-shadow: 1px 1px 2px @partyPriceShadow;
+            }
+        }
+    }
+    &.section-babyemotion {
+        background-image: url(../images/section-babyemotion.jpg);
+        .btn-direction-sect {
+            color: @babyBtn;
+            border-color: @babyBtn;
+            text-shadow: 1px 1px 2px @babyBtnTextShadow;
+            &:hover {
+                color: @babyBtnHover;
+                border-color: @babyBtnHover;
+            }
+        }
+        .direction-sect__price-block {
+            .price {
+                color: @babyPrice;
+                text-shadow: 1px 1px 2px @babyPriceShadow;
+            }
+        }
+    }
+    &.section-loveemotion {
+        background-image: url(../images/section-loveemotion.jpg);
+        .btn-direction-sect {
+            color: @loveBtn;
+            border-color: @loveBtn;
+            text-shadow: 1px 1px 2px @loveBtnTextShadow;
+            &:hover {
+                color: @loveBtnHover;
+                border-color: @loveBtnHover;
+            }
+        }
+        .direction-sect__price-block {
+            .price {
+                color: @lovePrice;
+                text-shadow: 1px 1px 2px @lovePriceShadow;
+            }
+        }
+    }
+    &.section-foodyemotion {
+        background-image: url(../images/section-foodemotion.jpg);
+        .btn-direction-sect {
+            color: @foodBtn;
+            border-color: @foodBtn;
+            text-shadow: 1px 1px 2px @foodBtnTextShadow;
+            &:hover {
+                color: @foodBtnHover;
+                border-color: @foodBtnHover;
+            }
+        }
+        .direction-sect__price-block {
+            .price {
+                color: @foodPrice;
+                text-shadow: 1px 1px 2px @lovePriceShadow;
+            }
+        }
+    }
+    &.section-sportemotion {
+        background-image: url(../images/section-sportemotion.jpg);
+        .btn-direction-sect {
+            color: @sportBtn;
+            border-color: @sportBtn;
+            text-shadow: 1px 1px 2px @sportBtnTextShadow;
+            &:hover {
+                color: @sportBtnHover;
+                border-color: @sportBtnHover;
+            }
+        }
+        .direction-sect__price-block {
+            .price {
+                color: @sportPrice;
+                text-shadow: 1px 1px 2px @sportPriceShadow;
+            }
+        }
+    }
+}
+.direction-sect__video {
+    display: inline-block;
+    width: 44.6%;
+    iframe {
+        width: 100% !important;
+    }
+}
+.direction-sect__price-block {
+    padding-top: 0.5rem;
+    .clearfix;
+    .price {
+        display: inline-block;
+        .fsize(35);
+        font-weight: 300;
+        strong {
+            .fsize(40);
+        }
+    }
+}
+.direction-sect__description {
+    display: inline-block;
+    width: 52.2%;
+    color: @directionSectionText;
+    p {
+        .fsize(14);
+        font-weight: 400;
+        &:first-child {
+            margin-top: -0.2rem;
+        }
+    }
+}
+
+.contacts-sect {
+    text-align: center;
+}
+.contacts-sect__title {
+    text-transform: uppercase;
+    color: @black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+    .large-visible {
+        display: none;
+    }
+    .medium-visible {
+        display: block;
+    }
+}
+@media (max-width: 640px) {
+    .medium-visible {
+        display: none;
+    }
+    .small-visible {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    .smallest-visible {
+        display: block;
+    }
+    .small-visible {
+        display: none;
+    }
 }

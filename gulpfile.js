@@ -22,19 +22,21 @@ var reload = browserSync.reload;
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         js: 'build/js/',
+        html: 'build/',
         css: 'build/css/',
         img: 'build/images/',
         fonts: 'build/fonts/'
     },
     src: {
         js: 'src/js/**/**/*.js',
+        html: 'src/*.html',
         style: 'src/style/style.less',
         img: 'src/images/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
 
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        html: 'build/*.html',
+        html: 'src/*.html',
         js: 'src/js/**/*.js',
         style: 'src/style/**/*.less',
         img: 'src/images/**/*.*',
@@ -52,6 +54,11 @@ gulp.task('images', function() {
             use: [pngquant()],
             interlaced: true
         }))*/
+        .pipe(reload({ stream:true }));
+});
+gulp.task('html', function () {
+    gulp.src(path.src.html)
+        .pipe(gulp.dest(path.build.html))
         .pipe(reload({ stream:true }));
 });
 gulp.task('style', function () {
@@ -137,7 +144,7 @@ gulp.task('prod-watch', ['prod'], function () {
         gulp.start('images');
     });
 });
-gulp.task('dev', ['style', 'js']);
+gulp.task('dev', ['html', 'style', 'js']);
 gulp.task('prod', ['style-min', 'js-min']);
 
 gulp.task('default', ['dev-watch']);
