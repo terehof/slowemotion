@@ -49,13 +49,16 @@ app.main = {
     },
     bgVideo: function() {
         if ($(window).width() > 640) {
-            $('.bg-video').tubular({videoId: '5X3DUQBssh4'});
+            $('.bg-video').tubular({
+            	videoId: '5X3DUQBssh4',
+            	ratio: 4/3
+            });
         }
     },
     parallax: function () {
         $('#scene-1').parallax({
-            'calibrate-y': true,
-            'calibrate-x': true
+            'calibrate-y': false,
+            'calibrate-x': false
         });
     }
 };
