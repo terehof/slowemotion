@@ -68,31 +68,24 @@
 
 .popup-close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.8rem;
-    transition: all 0.25s ease;
+    top: 1.8rem;
+    right: 1.5rem;
+    transition: opacity 0.25s ease;
     cursor: pointer;
     width: 1.6em;
     height: 1.6em;
-    background-image: url(../images/popup-close.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    //span {
-    //    display: block;
-    //    vertical-align: top;
-    //    width: 18px;
-    //    height: 4px;
-    //    background: @black;
-    //    transition: all 0.25s ease;
-    //    &:first-child {
-    //        transform: rotate(45deg);
-    //        margin-bottom: -4px;
-    //    }
-    //    &:nth-child(2) {
-    //        transform: rotate(-45deg);
-    //    }
-    //}
+    svg {
+        width: 100%;
+        polygon {
+            fill: @black;
+            transition: all 0.25s ease;
+        }
+    }
     &:hover {
-        opacity: 0.8;
+        svg {
+            polygon {
+                fill: fade(@black, 65%);
+            }
+        }
     }
 }

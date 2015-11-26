@@ -5,6 +5,9 @@ app.main = {
         this.events();
         this.slider();
         this.reviewsHeight();
+        this.menuLinks();
+        this.bgVideo();
+        this.parallax();
     },
     events: function () {
         $('.jsPopupPrice').on('click', function () {
@@ -19,7 +22,7 @@ app.main = {
         $('.menu-toggle').on('click', function() {
             $(this).toggleClass('active');
             $('.main-menu').toggleClass('active');
-        })
+        });
     },
     slider: function() {
         $('#slider').rotateSlider({});
@@ -35,6 +38,25 @@ app.main = {
             });
             $reviewText.height(maxHeight);
         }
+    },
+    menuLinks: function () {
+        $("a.ancLink").click(function () {
+            var elementClick = $(this).attr("href");
+            var destination = $(elementClick).offset().top;
+            $('html,body').animate( { scrollTop: destination }, 1500, 'swing' );
+            return false;
+        });
+    },
+    bgVideo: function() {
+        if ($(window).width() > 640) {
+            $('.bg-video').tubular({videoId: '5X3DUQBssh4'});
+        }
+    },
+    parallax: function () {
+        $('#scene-1').parallax({
+            'calibrate-y': true,
+            'calibrate-x': true
+        });
     }
 };
 app.popup = {
