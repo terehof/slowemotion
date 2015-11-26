@@ -417,10 +417,31 @@ strong {
         }
     }
     .clearfix;
+    h3 {
+        display: none;
+        margin: 0 0 3rem;
+        line-height: 1;
+        text-transform: uppercase;
+        text-align: center;
+        .fsize(60);
+        font-weight: 200;
+    }
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 4.8rem;
+        transform: translate(-50%, 0);
+    }
 
     &.section-partyemotion {
         position: relative;
         background-image: url(../images/section-partyemotion.jpg);
+        h3 {
+            color: #feb4d5;
+        }
+        .title {
+            .setBg('../images/title-partyemotion.png');
+        }
         .btn-direction-sect {
             color: @partyBtn;
             border-color: @partyBtn;
@@ -444,6 +465,12 @@ strong {
     &.section-babyemotion {
         position: relative;
         background-image: url(../images/section-babyemotion.jpg);
+        h3 {
+            color: #d9fbff;
+        }
+        .title {
+            .setBg('../images/title-babyemotion.png');
+        }
         .btn-direction-sect {
             color: @babyBtn;
             border-color: @babyBtn;
@@ -467,6 +494,12 @@ strong {
     &.section-loveemotion {
         position: relative;
         background-image: url(../images/section-loveemotion.jpg);
+        h3 {
+            color: #f86a96;
+        }
+        .title {
+            .setBg('../images/title-loveemotion.png');
+        }
         .btn-direction-sect {
             color: @loveBtn;
             border-color: @loveBtn;
@@ -487,9 +520,15 @@ strong {
             z-index: 1;
         }
     }
-    &.section-foodyemotion {
+    &.section-foodemotion {
         position: relative;
         background-image: url(../images/section-foodemotion.jpg);
+        h3 {
+            color: #f7b5da;
+        }
+        .title {
+            .setBg('../images/title-foodemotion.png');
+        }
         .btn-direction-sect {
             color: @foodBtn;
             border-color: @foodBtn;
@@ -513,6 +552,12 @@ strong {
     &.section-sportemotion {
         position: relative;
         background-image: url(../images/section-sportemotion.jpg);
+        h3 {
+            color: #d7fbff;
+        }
+        .title {
+            .setBg('../images/title-sportemotion.png');
+        }
         .btn-direction-sect {
             color: @sportBtn;
             border-color: @sportBtn;
@@ -819,6 +864,7 @@ strong {
     margin: 0 0 4.4rem;
     text-align: center;
     iframe {
+        max-width: 100%;
         display: inline-block;
     }
 }
@@ -1169,7 +1215,6 @@ footer {
         right: 74%;
     }
 }
-
 @media (max-width: 1180px) {
     .menu-toggle {
         display: block;
@@ -1228,6 +1273,7 @@ footer {
         }
         li {
             display: block;
+            margin: 0;
             a {
                 display: block;
                 font-weight: 700;
@@ -1274,7 +1320,6 @@ footer {
         padding: 0 1%;
     }
 }
-
 @media (max-width: 1024px) {
     .large-visible {
         display: none;
@@ -1318,6 +1363,143 @@ footer {
             display: none;
         }
     }
+    .direction-sect {
+        padding: 0;
+        .container {
+            h3 {
+                display: block;
+            }
+        }
+        .title {
+            display: none;
+        }
+    }
+}
+@media (max-width: 640px) {
+    .main-menu {
+        li {
+            a {
+                .fsize(20);
+                line-height: 1;
+            }
+        }
+    }
+    .first-screen-content {
+        padding: 0 0 5rem;
+    }
+    .main-logo {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -5rem;
+        margin-bottom: -5rem;
+    }
+    .direction-sect {
+        .container {
+            padding: 2rem;
+            h3 {
+                .fsize(40);
+                margin: 0 0 2rem;
+            }
+        }
+    }
+    .direction-sect__price-block {
+        .price {
+            display: block;
+            text-align: center;
+        }
+    }
+    .btn-direction-sect {
+        display: block;
+        margin: 1.5rem auto auto;
+        float: none !important;
+    }
+
+    h1 {
+        .fsize(34);
+    }
+    h2 {
+        .fsize(20);
+    }
+    .section.why-me {
+        padding: 2rem 0 1.5rem;
+    }
+    .benefit {
+        margin: 0 0 2rem;
+        padding: 8rem 3.1% 0;
+    }
+    .rotateslider-container {
+        width: 98%;
+        height: 30rem;
+    }
+    .how-we-work-sect {
+        padding: 2rem 0;
+    }
+    .contacts-sect {
+        padding: 2rem 0;
+    }
+    .we-figures-sect {
+        padding: 2rem 0;
+    }
+    .rotateslider-container .rotateslider-item {
+        width: 13rem;
+        height: 13rem;
+    }
+    .rotateslider-container .rotateslider-item.now {
+        width: 20rem;
+        height: 20rem;
+    }
+    .we-figures-item {
+        width: 100%;
+        margin-top: 2rem;
+        padding: 0 10%;
+        .title {
+            span {
+                .fsize(30);
+            }
+        }
+    }
+    .say-about-us-sect {
+        padding: 2rem 0;
+    }
+    .section-title {
+        .fsize(30);
+    }
+    .reviews-bg {
+        display: none;
+    }
+    .review-block {
+        width: 100%;
+        display: block;
+        float: none;
+        margin-bottom: 2rem;
+    }
+    .prefooter-sect {
+        padding: 2rem 0;
+    }
+    .copyright {
+        display: block;
+        text-align: center;
+    }
+    .footer-contacts {
+        display: block;
+        margin: auto;
+        float: none;
+        text-align: center;
+        line-height: 1.4;
+        color: @black;
+    }
+    .footer-email {
+        display: block;
+        margin: 1rem auto -1.5rem;
+    }
+    .footer-phone {
+        display: block;
+        margin: auto auto 1rem;
+    }
+    .contacts-vert-line {
+        display: none;
+    }
+
 }
 @media (max-width: 480px) {
     .smallest-visible {
@@ -1325,5 +1507,61 @@ footer {
     }
     .small-visible {
         display: none;
+    }
+    .direction-sect__video iframe {
+        height: 210px;
+    }
+    .about-us-video-wrapper iframe {
+        height: 220px;
+    }
+    .main-logo {
+        margin-top: -8rem;
+        margin-bottom: -8rem;
+        img {
+            max-width: 100%;
+        }
+    }
+    .header-call-request__phone {
+        display: block;
+        margin-right: 0;
+        text-align: right;
+        margin-bottom: 1rem;
+    }
+    .header-call-request__btn {
+        display: block;
+    }
+    h1 {
+        .fsize(28);
+        line-height: 1.2;
+    }
+    h2 {
+        .fsize(20);
+        line-height: 1.2;
+    }
+    .btn.btn-get-price {
+        .fsize(16);
+    }
+    .why-me__title {
+        .fsize(24);
+        margin-bottom: 2rem;
+    }
+    .benefit {
+        width: 100%;
+    }
+    .direction-sect {
+        h3 {
+            .fsize(28) !important;
+        }
+    }
+    .contacts-phone {
+        .fsize(24);
+    }
+    .contacts-email {
+        .fsize(24);
+    }
+}
+@media (max-width: 360px) {
+    .direction-sect__video iframe {
+        height: 200px;
     }
 }
