@@ -56,9 +56,10 @@ app.main = {
         }
     },
     parallax: function () {
-        $('#scene-1').parallax({
-            'calibrate-y': false,
-            'calibrate-x': false
+        $('#scene-1').parallax({});
+        $('#scene-2').parallax({
+            invertX: false,
+            invertY: false
         });
     }
 };
