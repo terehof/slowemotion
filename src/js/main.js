@@ -41,6 +41,9 @@ app.main = {
     },
     menuLinks: function () {
         $("a.ancLink").click(function () {
+        	if ($(window).width() <= 1180) {
+        		$('.menu-toggle').click();
+        	}
             var elementClick = $(this).attr("href");
             var destination = $(elementClick).offset().top;
             $('html,body').animate( { scrollTop: destination }, 1500, 'swing' );
@@ -56,11 +59,13 @@ app.main = {
         }
     },
     parallax: function () {
-        $('#scene-1').parallax({});
+        /*$('#scene-1').parallax({});
         $('#scene-2').parallax({
             invertX: false,
             invertY: false
-        });
+        });*/
+
+		$(window).enllax();
     }
 };
 app.popup = {
