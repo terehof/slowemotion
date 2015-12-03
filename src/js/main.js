@@ -8,6 +8,7 @@ app.main = {
         this.menuLinks();
         this.bgVideo();
         this.parallax();
+        this.formSend();
     },
     events: function () {
         $('.jsPopupPrice').on('click', function () {
@@ -23,6 +24,8 @@ app.main = {
             $(this).toggleClass('active');
             $('.main-menu').toggleClass('active');
         });
+
+        $('.masked-input').mask("+38(999) 999-9999");
     },
     slider: function() {
         $('#slider').rotateSlider({});
@@ -41,6 +44,9 @@ app.main = {
     },
     menuLinks: function () {
         $("a.ancLink").click(function () {
+        	if ($(window).width() <= 1180) {
+        		$('.menu-toggle').click();
+        	}
             var elementClick = $(this).attr("href");
             var destination = $(elementClick).offset().top;
             $('html,body').animate( { scrollTop: destination }, 1500, 'swing' );
@@ -50,17 +56,48 @@ app.main = {
     bgVideo: function() {
         if ($(window).width() > 640) {
             $('.bg-video').tubular({
-            	videoId: '5X3DUQBssh4',
+            	//videoId: '5X3DUQBssh4',
+            	videoId: 'Aj8xUuGB2Q8',
             	ratio: 4/3
             });
         }
     },
     parallax: function () {
-        $('#scene-1').parallax({});
-        $('#scene-2').parallax({
-            invertX: false,
-            invertY: false
-        });
+		$(window).enllax();
+    },
+    formSend: function () {
+        $('.form-callback').validate({
+            rules: {
+                'name': {
+                    required: true
+                },
+                'phone': {
+                    required: true
+                }
+            },
+            messages: {
+                'name': 'Укажите свое имя',
+                'phone': 'Укажите свой телефон'
+            },
+            submitHandler: function(form) {
+                var formData = $(form).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "send.php",
+                    data: formData,
+                    success: function (data) {
+                        console.log(data);
+                        $('.form-callback .message-text').removeClass('error').addClass('success').html('Спасибо. Ожидайте наш звонок!').fadeIn();
+                        $('.form-callback').find('input').val('');
+                    },
+                    error: function (data) {
+                        console.log('error');
+                        console.log(data);
+                        $('.form-callback .message-text').addClass('error').html('Произошла ошибка').fadeIn();
+                    }
+                });
+            }
+        })
     }
 };
 app.popup = {
